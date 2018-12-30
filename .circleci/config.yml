@@ -27,7 +27,7 @@ jobs:
       - run: apt-get install yarn -y
       - run: yarn
       - run: bash ./build_all.sh
-      - run: rsync -Prv -e "ssh -vv -i ~/.ssh/circleci -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -F /dev/null" --delete ./public circleci@ameo.link:/var/www/cprimozic/
+      - run: rsync -Prv -e "ssh -vv -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -o IdentitiesOnly=yes -F /dev/null" --delete ./public circleci@ameo.link:/var/www/cprimozic/
 
 workflows:
   version: 2
